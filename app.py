@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 st.title("Test App")
-X = np.random.normal(0, 10, size=(10000, 2))
+X = np.random.normal(0, 10, size=(10000, 3))
 
-fig, ax = plt.subplots(1, 2, figsize=(10, 6))
+fig, ax = plt.subplots(1, 3, figsize=(10, 6))
 
 ax[0].hist(X[::, 0], color="red",
            alpha=0.4, bins=50)
@@ -19,4 +19,9 @@ ax[1].spines["top"].set_visible(False)
 ax[1].spines["right"].set_visible(False)
 ax[1].set_title("X2", size=14)
 
+ax[2].hist(X[::, 2], color="pink",
+           alpha=0.6, bins=50)
+ax[2].spines["top"].set_visible(False)
+ax[2].spines["right"].set_visible(False)
+ax[2].set_title("X3", size=14)
 st.pyplot(fig)
